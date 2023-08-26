@@ -4,10 +4,10 @@
   border-radius: 1.66vw;
   width: 9.02777777778vw;
   height: 13.1944444444vw;
+
   &:hover {
     border-color: #FFFFFF;
   }
-
 }
 
 .wrapper {
@@ -19,18 +19,25 @@
   display: flex;
   flex-direction: row;
   margin-top: 1.38888888889vw;
+
+  a {
+    width: 9.02777777778vw;
+    height: 13.1944444444vw;
+    margin-right: 1.66666666667vw;
+    &:last-child{
+      margin-right: 0vw;
+    }
+  }
 }
 
 .voteImg {
   border: 0.27777777777vw solid #cdcfff;
   @extend %images;
-  margin-right: 1.11111111111vw;
 }
 
 .breedImg {
   border: 0.27777777777vw solid #baf1d0;
   @extend %images;
-  margin-right: 1.11111111111vw;
 }
 
 .galleryImg {
@@ -39,18 +46,24 @@
 }
 
 .buttons {
-  margin-top: 0.69444444444vw;
+  margin-top: 1.2vw;
   display: flex;
   flex-direction: row;
 
   a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 9.58333333333vw;
     height: 2.5vw;
     margin-right: 1.11111111111vw;
-  }
 
-  button {
-    cursor: pointer;
+    &:last-child {
+      margin-right: 0vw;
+    }
+
+
     background-color: #FFFFFF;
     border: none;
     border-radius: 0.69444444444vw;
@@ -72,6 +85,7 @@
 
     &:hover {
       background-color: #FBE0DC;
+      color: #FF868E;
     }
   }
 }
@@ -83,7 +97,7 @@
   }
 }
 
-.activeImg{
+.activeImg {
   img {
     border-color: #FBE0DC;
   }

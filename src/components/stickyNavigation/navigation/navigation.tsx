@@ -21,9 +21,9 @@ export const Navigation = () => {
                 </Link>
             </section>
             <section className={style.buttons}>
-                {navList.map((el) => (
-                    <Link to={el} className={location.pathname === el ? style.activeButton : ''}>
-                        <button>{el}</button>
+                {navList.map((el, index) => (
+                    <Link key={index} to={el} className={location.pathname === el ? style.activeButton : ''}>
+                        {el}
                     </Link>
                 ))}
             </section>
