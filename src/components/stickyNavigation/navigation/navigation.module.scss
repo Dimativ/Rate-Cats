@@ -1,0 +1,90 @@
+%images {
+  cursor: pointer;
+
+  border-radius: 1.66vw;
+  width: 9.02777777778vw;
+  height: 13.1944444444vw;
+  &:hover {
+    border-color: #FFFFFF;
+  }
+
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.38888888889vw;
+}
+
+.voteImg {
+  border: 0.27777777777vw solid #cdcfff;
+  @extend %images;
+  margin-right: 1.11111111111vw;
+}
+
+.breedImg {
+  border: 0.27777777777vw solid #baf1d0;
+  @extend %images;
+  margin-right: 1.11111111111vw;
+}
+
+.galleryImg {
+  border: 0.27777777777vw solid #ffe1aa;
+  @extend %images;
+}
+
+.buttons {
+  margin-top: 0.69444444444vw;
+  display: flex;
+  flex-direction: row;
+
+  a {
+    width: 9.58333333333vw;
+    height: 2.5vw;
+    margin-right: 1.11111111111vw;
+  }
+
+  button {
+    cursor: pointer;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 0.69444444444vw;
+
+    width: 9.58333333333vw;
+    height: 2.5vw;
+
+    font-family: Jost;
+    font-size: 0.83333333333vw;
+    font-weight: 500;
+    line-height: 1.11111111111vw;
+    letter-spacing: 0.13888888888vw;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FF868E;
+
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #FBE0DC;
+    }
+  }
+}
+
+.activeButton {
+  button {
+    color: #FFFFFF;
+    background-color: #FF868E;
+  }
+}
+
+.activeImg{
+  img {
+    border-color: #FBE0DC;
+  }
+}

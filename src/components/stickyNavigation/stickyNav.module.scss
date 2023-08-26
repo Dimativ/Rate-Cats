@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10.2083333333vw;
+  padding-top: 5.55555555556vw;
+
+  h1 {
+    font-family: Jost;
+    font-size: 3.05555555556vw;
+    font-weight: 500;
+    line-height: 4.02777777778vw;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1D1D1D;
+  }
+
+  p {
+    margin-top: 0.69444444444vw;
+
+    font-family: Jost;
+    font-size: 1.38888888889vw;
+    font-weight: 400;
+    line-height: 2.01388888889vw;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #8C8C8C;
+  }
+}
+
+.stickyWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4.16666666667vw;
+  position: sticky;
+  top: 8vw;
+
+  h3 {
+    font-family: Jost;
+    color: #1D1D1D;
+    font-size: 1.38888888889vw;
+    font-weight: 500;
+    line-height: 2.01388888889vw;
+  }
+}
