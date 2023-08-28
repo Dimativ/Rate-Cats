@@ -1,0 +1,106 @@
+%svg{
+  svg {
+    width: 2.08333333333vw;
+    height: 2.08333333333vw;
+  }
+}
+
+%mainImg {
+  width: 44.4444444444vw;
+  height: 25vw;
+  border-radius: 1.38888888889vw;
+}
+
+.wrapper {
+  margin-top: 1.38888888889vw;
+  margin-left: 1.38888888889vw;
+  display: flex;
+  flex-direction: column;
+  img {
+    @extend %mainImg;
+  }
+}
+
+.buttons {
+  position: absolute;
+
+  margin-left: 13.6111111111vw;
+  margin-top: 22.0833333333vw;
+
+  display: flex;
+  flex-direction: row;
+  width: 17.2222222222vw;
+  height: 5.55555555556vw;
+
+  border-radius: 1.38888888889vw;
+  border: 0.27777777777vw solid #FFFFFF;
+
+  background-color: #FFFFFF;
+
+  button {
+    cursor: pointer;
+
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 5.55555555556vw;
+    height: 5.55555555556vw;
+    margin-right: 0.27777777777vw;
+    &:last-child {
+      margin-right: 0vw;
+    }
+  }
+}
+
+.likes {
+  background-color: #97EAB9;
+  border-bottom-left-radius: 1.38888888889vw;
+  border-top-left-radius: 1.38888888889vw;
+
+  @extend %svg;
+}
+
+.favourite {
+  background-color: #FF868E;
+
+  svg {
+    height: 1.80555555556vw !important;
+  }
+
+  @extend %svg
+}
+
+.dislikes {
+  background-color: #FFD280;
+  border-bottom-right-radius: 1.38888888889vw;
+  border-top-right-radius: 1.38888888889vw;
+
+  @extend %svg
+}
+
+.skeleton {
+  @extend %mainImg;
+}
+
+
+
+.logsWrapper {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 3.61111111111vw;
+}
+.log{
+  display: flex;
+  flex-direction: row;
+
+  width: 44.4444444444vw;
+  height: 4.16666666667vw;
+
+  background-color: #F8F8F7;
+
+  border-radius: 0.69444444444vw;
+}

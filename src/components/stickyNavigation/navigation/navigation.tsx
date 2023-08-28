@@ -10,19 +10,19 @@ export const Navigation = () => {
     return (
         <div className={style.wrapper}>
             <section className={style.navigation}>
-                <Link to='voting' className={location.pathname === 'voting' ? style.activeImg : ''}>
+                <Link to='voting' className={location.pathname === "/voting" ? style.activeImg : ''}>
                     <img src={voting} className={style.voteImg}></img>
                 </Link>
-                <Link to='breeds' className={location.pathname === 'breeds' ? style.activeImg : ''}>
+                <Link to='breeds' className={location.pathname === "/breeds" ? style.activeImg : ''}>
                     <img src={breeds} className={style.breedImg}></img>
                 </Link>
-                <Link to='gallery' className={location.pathname === 'gallery' ? style.activeImg : ''}>
+                <Link to='gallery' className={location.pathname === "/gallery" ? style.activeImg : ''}>
                     <img src={gallery} className={style.galleryImg}></img>
                 </Link>
             </section>
             <section className={style.buttons}>
                 {navList.map((el, index) => (
-                    <Link key={index} to={el} className={location.pathname === el ? style.activeButton : ''}>
+                    <Link key={index} to={el} className={location.pathname === `/${el}` ? style.activeButton : ''}>
                         {el}
                     </Link>
                 ))}
