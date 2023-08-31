@@ -2,11 +2,13 @@
   display: flex;
   flex-direction: row;
   padding-left: 10.2083333333vw;
+}
 
+.nameText {
+  margin-left: 0.55555555555vw;
+  margin-top: 2.05vw;
+  text-decoration: none;
   h1 {
-    margin-left: 0.55555555555vw;
-    margin-top: 2.05vw;
-
     font-size: 1.38888888889vw;
     line-height: 2.01388888889vw;
     letter-spacing: 0em;
@@ -17,8 +19,14 @@
   }
 }
 
+
 .logo {
   margin-top: 2.08333333333vw;
   width: 1.66666666667vw;
   height: 1.66666666667vw;
+
+  img {
+    width: 1.66666666667vw;
+    height: 1.66666666667vw;
+  }
 }

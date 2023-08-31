@@ -1,15 +1,15 @@
 import style from "./voteImgAndButtons.module.scss"
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import axios from "axios";
 import {API_KEY} from "../../../api.ts";
 import {Skeleton} from "./skeleton.tsx";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, {Toaster} from 'react-hot-toast';
+import {useDispatch} from "react-redux";
+import {fetchImages, postVoteDown, postVoteUp} from "../../../store/slices/votingSlice/votingSlice.ts";
 
-export const VoteImgAndButtons = () => {
-    const [isLoading, setIsLoading] = useState(true)
-    const upAndDownVoteEndpoint = `https://api.thecatapi.com/v1/votes`
+export const VoteImgAndButtons = ({items, status}) => {
+    const dispatch = useDispatch()
     const favouriteEndpoint = `https://api.thecatapi.com/v1/favourites`
-    const [cats, setCats] = useState([])
 
     const config = {
         headers: {
@@ -18,30 +18,10 @@ export const VoteImgAndButtons = () => {
         },
     };
 
-
-    const fetchImages = async () => {
-        const {data} = await axios.get('https://api.thecatapi.com/v1/images/search?', {
-            headers: {
-                'x-api-key': API_KEY
-            }
-        })
-        setCats(data)
-    }
-
-
-    const onClickLike = async (id) => {
-        const postData = {
-            image_id: id,
-            value: 1, // Upvote value
-        };
-
-
-        await axios.post(upAndDownVoteEndpoint, postData, config).then(response => {
-            console.log('Upvote successful:', response.data);
-        })
-
+    const onClickLike = (id) => {
+        dispatch(postVoteUp(id))
         toast.promise(
-            fetchImages(),
+            dispatch(fetchImages()),
             {
                 loading: 'Saving...',
                 success: `Image saved to likes`,
@@ -60,16 +40,10 @@ export const VoteImgAndButtons = () => {
     }
 
 
-    const onClickDislike = async (id) => {
-        const postData = {
-            image_id: id,
-            value: -1, // Upvote value
-        };
-        await axios.post(upAndDownVoteEndpoint, postData, config).then(response => {
-            console.log('Downvote successful:', response.data);
-        })
+    const onClickDislike = (id) => {
+        dispatch(postVoteDown(id))
         toast.promise(
-            fetchImages(),
+            dispatch(fetchImages()),
             {
                 loading: 'Saving...',
                 success: `Image saved to dislikes`,
@@ -95,7 +69,7 @@ export const VoteImgAndButtons = () => {
             console.log('Favourite successful:', response.data);
         })
         toast.promise(
-            fetchImages(),
+            dispatch(fetchImages()),
             {
                 loading: 'Saving...',
                 success: `Image saved to favourites`,
@@ -113,19 +87,17 @@ export const VoteImgAndButtons = () => {
         );
     }
 
-
     useEffect(() => {
-        fetchImages()
-        setIsLoading(false)
+        dispatch(fetchImages())
     }, [])
 
     return (
         <section className={style.wrapper}>
             <Toaster position='top-right'/>
-            {cats.map((obj, index) => isLoading ? <Skeleton key={index}/> : (
+            {status === 'loading' ? <Skeleton/> : items.map((obj, index) => (
                 <img src={obj.url} key={obj.id}></img>
             ))}
-            {cats.map((obj, index) => (
+            {items.map((obj, index) => (
                 <section key={index} className={style.buttons}>
                     <button onClick={() => onClickLike(obj.id)} className={style.likes}>
                         <svg viewBox="0 0 30 30" fill="none">
@@ -150,15 +122,13 @@ export const VoteImgAndButtons = () => {
                     </button>
                 </section>
             ))}
-            <div className={style.logsWrapper}>
-
-            </div>
-
         </section>
     )
 }
 
-
+// <div className={style.logsWrapper}>
+//
+// </div>
 // {logs.map((obj, index) => (
 //     <section key={index}  className={style.log}>
 //         <p className={style.time}></p>
