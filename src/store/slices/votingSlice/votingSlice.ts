@@ -2,6 +2,13 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import axios from "axios";
 import {API_KEY} from "../../../api.ts";
 
+
+const initialState = {
+    items: [],
+    status: 'loading' // loading | success | error
+}
+
+
 const config = {
     headers: {
         'Content-Type': 'application/json',
@@ -20,6 +27,7 @@ export const fetchImages = createAsyncThunk(
         return data
     }
 )
+
 
 export const postVoteDown = createAsyncThunk(
     'voting/postVoteDown',
@@ -43,12 +51,6 @@ export const postVoteUp = createAsyncThunk(
     }
 )
 
-
-const initialState = {
-    items: [],
-    status: 'loading' // loading | success | error
-}
-
 export const votingSlice = createSlice({
     name: 'voting',
     initialState,
@@ -65,7 +67,7 @@ export const votingSlice = createSlice({
         [fetchImages.pending]: (state) => {
             state.items = []
             state.status = 'loading'
-        }
+        },
     }
 })
 

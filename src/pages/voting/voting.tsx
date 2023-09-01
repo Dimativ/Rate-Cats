@@ -7,7 +7,7 @@ const Voting = () => {
     return (
         <div className={style.wrapper}>
             <BackButtonCategory/>
-            <VoteImgAndButtons items = {items} status={status}/>
+            <VoteImgAndButtons items={items} status={status}/>
         </div>
     )
 }

@@ -84,23 +84,3 @@
 .skeleton {
   @extend %mainImg;
 }
-
-
-
-.logsWrapper {
-  display: flex;
-  flex-direction: column;
-
-  margin-top: 3.61111111111vw;
-}
-.log{
-  display: flex;
-  flex-direction: row;
-
-  width: 44.4444444444vw;
-  height: 4.16666666667vw;
-
-  background-color: #F8F8F7;
-
-  border-radius: 0.69444444444vw;
-}

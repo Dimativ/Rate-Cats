@@ -125,13 +125,3 @@ export const VoteImgAndButtons = ({items, status}) => {
         </section>
     )
 }
-
-// <div className={style.logsWrapper}>
-//
-// </div>
-// {logs.map((obj, index) => (
-//     <section key={index}  className={style.log}>
-//         <p className={style.time}></p>
-//         <p className={style.mainText}>Image ID: {obj.id} was added to Favourites</p>
-//     </section>
-// ))}
