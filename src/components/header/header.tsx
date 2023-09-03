@@ -1,6 +1,7 @@
 import style from "./header.module.scss"
 import {Link, useLocation} from "react-router-dom";
 import logo from "../../pics/header/logo.png"
+import {SearchAndNav} from "../../index.ts";
 const Header = () => {
     const location = useLocation()
     return (
@@ -11,6 +12,7 @@ const Header = () => {
             <Link to="/" className={style.nameText}>
                 <h1>RatePets</h1>
             </Link>
+            {location.pathname !== '/' && <SearchAndNav location={location}/>}
         </header>
     )
 }

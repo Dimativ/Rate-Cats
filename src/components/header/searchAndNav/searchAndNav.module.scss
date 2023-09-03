@@ -1,0 +1,51 @@
+%card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 4.16666666667vw;
+  height: 4.16666666667vw;
+
+  margin-left: 0.69444444444vw;
+
+  border-radius: 1.38888888889vw;
+
+  background-color: #FFFFFF;
+
+  svg {
+    width: 2.08333333333vw;
+    height: 2.08333333333vw;
+    fill: #FF868E;
+  }
+
+  &:hover {
+    background-color: #FBE0DC;
+  }
+
+  transition: background-color 0.2s ease-in-out;
+}
+
+.wrapper {
+  margin-left: 32.7vw;
+  margin-top: 2.08333333333vw;
+  display: flex;
+  flex-direction: row;
+
+  input {
+    width: 32.6388888889vw;
+    height: 4.16666666667vw;
+  }
+}
+
+.card {
+ @extend %card;
+}
+
+.selected {
+  background-color: #FF868E !important;
+
+  svg {
+    fill: #FFFFFF;
+  }
+  @extend %card;
+}

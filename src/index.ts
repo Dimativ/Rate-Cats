@@ -1,11 +1,11 @@
 //--------------------------------header
+export * from "./components/header/searchAndNav/searchAndNav.tsx"
 
-
-//-------------------------------stickyNavigation
+//-------------------------------stickyNavigation Component
 export * from "./components/stickyNavigation/stickyNav.tsx"
 export * from "./components/stickyNavigation/navigation/navigation.tsx"
 
-//-------------------------------BackButtonCategory
+//-------------------------------BackButtonCategory Component
 export * from "./components/backButtonCategory/backButtonCategory.tsx"
 
 
@@ -16,5 +16,11 @@ export * from "./pages/voting/voteImgAndButtons/skeleton.tsx"
 //-----------------------------Likes Page
 export * from "./pages/likes/likesGrid/likesGrid.tsx"
 
-//----------------------loader component
+//-----------------------------Dislikes Page
+export * from "./pages/dislikes/dislikesGrid/dislikesGrid.tsx"
+
+//-----------------------------Favourite Page
+export * from "./pages/favourite/favouriteGrid/favouriteGrid.tsx"
+
+//------------------------------Loader Component
 export * from "./components/loader/loader.tsx"

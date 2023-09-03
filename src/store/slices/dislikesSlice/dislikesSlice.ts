@@ -3,40 +3,40 @@ import axios from "axios";
 import {API_KEY} from "../../../api.ts";
 
 const initialState = {
-    likes: [],
+    dislikes: [],
     status: 'loading' // loading | success | error
 }
 
-export const fetchLikesVotes = createAsyncThunk(
-    'likes/fetchVotes',
+export const fetchDislikesVotes = createAsyncThunk(
+    'dislikes/fetchVotes',
     async () => {
         const {data} = await axios.get('https://api.thecatapi.com/v1/votes?limit=60&order=DESC', {
             headers: {
                 'x-api-key': API_KEY
             }
         })
-        return data.filter((likes) => likes.value === 1)
+        return data.filter((dislikes) => dislikes.value === -1)
     }
 )
 
-export const likesSlice = createSlice({
-    name: 'likes',
+export const dislikesSlice = createSlice({
+    name: 'dislikes',
     initialState,
     reducers: {
     },
     extraReducers: {
-        [fetchLikesVotes.fulfilled]: (state, action) => {
-            state.likes = action.payload
+        [fetchDislikesVotes.fulfilled]: (state, action) => {
+            state.dislikes = action.payload
             state.status = 'success'
         },
-        [fetchLikesVotes.pending]: (state) => {
-            state.likes = []
+        [fetchDislikesVotes.pending]: (state) => {
+            state.dislikes = []
             state.status = 'loading'
         }
     }
 })
 
 // Action creators are generated for each case reducer function
-export const {} = likesSlice.actions
+export const {} = dislikesSlice.actions
 
-export default likesSlice.reducer
+export default dislikesSlice.reducer
