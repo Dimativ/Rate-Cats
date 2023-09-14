@@ -4,9 +4,6 @@ import {Link} from "react-router-dom";
 export const SearchAndNav = ({location}) => {
     return (
         <section className={style.wrapper}>
-            <input>
-
-            </input>
             <Link to="likes" className={location.pathname === "/likes" ? style.selected : style.card}>
                 <svg viewBox="0 0 30 30" fill="none">
                     <path fillRule="evenodd" clipRule="evenodd"

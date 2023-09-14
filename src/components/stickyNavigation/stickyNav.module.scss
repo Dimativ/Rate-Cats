@@ -42,3 +42,29 @@
     line-height: 2.01388888889vw;
   }
 }
+
+@media only screen and (max-width: 812px) {
+  .wrapper {
+    margin-left: 5.33333333333vw;
+    padding-top: 21.3333333333vw;
+
+    h1 {
+      font-size: 11.7333333333vw;
+      line-height: 15.4666666667vw;
+    }
+
+    p {
+      margin-top: 2.66666666667vw;
+      font-size: 5.33333333333vw;
+    }
+  }
+
+  .stickyWrapper {
+    margin-top: 16vw;
+    position: sticky;
+
+    h3 {
+      font-size: 5.33333333333vw;
+    }
+  }
+}

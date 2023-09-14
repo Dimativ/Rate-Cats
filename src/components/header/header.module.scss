@@ -8,6 +8,7 @@
   margin-left: 0.55555555555vw;
   margin-top: 2.05vw;
   text-decoration: none;
+
   h1 {
     font-size: 1.38888888889vw;
     line-height: 2.01388888889vw;
@@ -21,6 +22,7 @@
 
 
 .logo {
+  display: flex;
   margin-top: 2.08333333333vw;
   width: 1.66666666667vw;
   height: 1.66666666667vw;
@@ -28,5 +30,33 @@
   img {
     width: 1.66666666667vw;
     height: 1.66666666667vw;
+  }
+}
+
+
+@media only screen and (max-width: 812px) {
+  .wrapper {
+    padding-left: 5.33333333333vw;
+  }
+
+  .logo {
+    margin-top: 5.33333333333vw;
+    width: 6.4vw;
+    height: 6.4vw;
+
+    img {
+      width: 6.4vw;
+      height: 6.4vw;
+    }
+  }
+
+  .nameText {
+    margin-left: 2.10666666667vw;
+    margin-top: 7.04vw;
+
+    h1 {
+      font-size: 5.33333333333vw;
+      line-height: 3vw;
+    }
   }
 }

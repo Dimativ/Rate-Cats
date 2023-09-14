@@ -24,7 +24,8 @@
     width: 9.02777777778vw;
     height: 13.1944444444vw;
     margin-right: 1.66666666667vw;
-    &:last-child{
+
+    &:last-child {
       margin-right: 0vw;
     }
   }
@@ -91,12 +92,50 @@
 }
 
 .activeButton {
-    color: #FFFFFF !important;
-    background-color: #FF868E !important;
+  color: #FFFFFF !important;
+  background-color: #FF868E !important;
 }
 
 .activeImg {
   img {
     border-color: #FBE0DC;
+  }
+}
+
+@media only screen and (max-width: 812px) {
+  .wrapper {
+    justify-content: center;
+  }
+  .navigation {
+    display: none;
+  }
+
+  .buttons {
+    margin-top: 6.53333333333vw;
+    align-items: center;
+    flex-direction: column;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5.33333333333vw;
+      margin-right: 0;
+
+      &:last-child {
+        margin-right: 0vw;
+        margin-bottom: 0;
+      }
+
+      width: 89.3333333333vw;
+      height: 9.6vw;
+
+      font-size: 3.2vw;
+      line-height: 4.26666666667vw;
+      letter-spacing: 0.53333333333vw;
+
+      transition: background-color 0.2s ease-in-out;
+
+    }
   }
 }

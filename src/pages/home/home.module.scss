@@ -10,3 +10,11 @@
     height: 62.5vw;
   }
 }
+
+@media only screen and (max-width: 812px) {
+  .wrapper{
+    img {
+      display: none;
+    }
+  }
+}

@@ -3,3 +3,9 @@
   flex-direction: row;
   margin-top: 0.69444444444vw;
 }
+
+@media only screen and (max-width: 812px) {
+  .wrapper{
+    flex-direction: column;
+  }
+}

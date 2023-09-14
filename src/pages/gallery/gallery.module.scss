@@ -1,0 +1,26 @@
+.wrapper {
+  margin-left: 9.51388888889vw;
+  margin-bottom: 1.38888888889vw;
+  width: 47.2222222222vw;
+  height: 41vw;
+  border-radius: 1.38888888889vw;
+
+  display: flex;
+  flex-direction: column;
+
+
+  background-color: #FFFFFF;
+
+  h1 {
+    margin-top: 15vw;
+    align-self: center;
+
+    font-family: Jost;
+    color: #1D1D1D;
+    font-size: 1.38888888889vw;
+    font-weight: 500;
+    line-height: 2.01388888889vw;
+
+    text-transform: uppercase;
+  }
+}
