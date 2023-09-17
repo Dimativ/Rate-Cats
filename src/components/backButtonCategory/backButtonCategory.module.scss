@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   padding-top: 1.38888888889vw;
+
   button {
     cursor: pointer;
     display: inline-flex;
@@ -46,5 +47,36 @@
     text-transform: uppercase;
 
     color: #FFFFFF;
+  }
+}
+
+@media only screen and (max-width: 812px) {
+  .wrapper {
+    padding-top: 5.33333333333vw;
+
+    button {
+      margin-left: 5.33333333333vw;
+      width: 10.6666666667vw;
+      height: 10.6666666667vw;
+      border-radius: 2.66666666667vw;
+
+      img {
+        width: 3.04vw;
+        height: 5.33333333333vw;
+      }
+    }
+  }
+
+  .name {
+    width: 38.9333333333vw;
+    height: 10.6666666667vw;
+    margin-left: 2.66666666667vw;
+    border-radius: 2.66666666667vw;
+
+    p {
+      font-size: 5.33333333333vw;
+      line-height: 8vw;
+      letter-spacing: 0.53333333333vw;
+    }
   }
 }
