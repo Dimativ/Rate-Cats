@@ -31,11 +31,6 @@
   display: flex;
   flex-direction: row;
   padding-left: 32.5vw;
-
-  input {
-    width: 32.6388888889vw;
-    height: 4.16666666667vw;
-  }
 }
 
 .card {
@@ -49,4 +44,24 @@
     fill: #FFFFFF;
   }
   @extend %card;
+}
+
+@media only screen and (max-width: 812px) {
+  %card {
+    width: 16vw;
+    height: 16vw;
+    margin-left: 2.66666666667vw;
+    border-radius: 5.33333333333vw;
+
+    svg {
+      width: 8vw;
+      height: 8vw;
+    }
+  }
+
+  .wrapper {
+    margin-left: 20vw;
+    margin-top: 5.33333333333vw;
+    padding-left: 0vw;
+  }
 }
