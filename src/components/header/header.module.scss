@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: row;
+  height: 6.94444444444vw;
   padding-left: 10.2083333333vw;
 }
 
@@ -9,14 +10,16 @@
   margin-top: 2.05vw;
   text-decoration: none;
 
-  h1 {
-    font-size: 1.38888888889vw;
-    line-height: 2.01388888889vw;
-    letter-spacing: 0em;
-    text-align: left;
+  font-size: 1.38888888889vw;
+  line-height: 2.01388888889vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #1D1D1D;
+  font-family: Jost;
+  font-weight: 600;
+
+  &:hover {
     color: #1D1D1D;
-    font-family: Jost;
-    font-weight: 600;
   }
 }
 
@@ -37,6 +40,7 @@
 @media only screen and (max-width: 812px) {
   .wrapper {
     padding-left: 5.33333333333vw;
+    height: 26.6666666667vw;
   }
 
   .logo {
@@ -53,10 +57,7 @@
   .nameText {
     margin-left: 2.10666666667vw;
     margin-top: 7.04vw;
-
-    h1 {
-      font-size: 5.33333333333vw;
-      line-height: 3vw;
-    }
+    font-size: 5.33333333333vw;
+    line-height: 3vw;
   }
 }

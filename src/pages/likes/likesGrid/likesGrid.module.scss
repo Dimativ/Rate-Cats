@@ -18,3 +18,13 @@
     }
   }
 }
+
+@media only screen and (max-width: 812px) {
+  .wrapper {
+    margin: 5.33333333333vw;
+
+    img {
+      border-radius: 2.66666666667vw;
+    }
+  }
+}
