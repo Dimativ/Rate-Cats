@@ -68,3 +68,15 @@
     }
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .stickyWrapper {
+    h3 {
+      color: #FFFFFF;
+    }
+  }
+
+  .wrapper h1 {
+    color: #FFFFFF;
+  }
+}

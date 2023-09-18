@@ -65,3 +65,9 @@
     padding-left: 0vw;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  %card {
+    background-color: #302F2F;
+  }
+}

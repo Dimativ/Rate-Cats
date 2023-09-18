@@ -80,3 +80,18 @@
     }
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .wrapper button {
+    background-color: rgba(255, 134, 142, 0.2);
+  }
+
+
+  .name {
+    background-color: rgba(255, 134, 142, 0.2);
+
+    p {
+      color: #FF868E;
+    }
+  }
+}

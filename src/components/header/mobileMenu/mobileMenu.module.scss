@@ -113,3 +113,15 @@
   @extend %navBtn;
   display: none;
 }
+
+@media (prefers-color-scheme: dark) {
+  %toggleBtn {
+    background-color: #302F2F;
+  }
+  .navigation{
+    background-color: #1D1D1D;
+    a{
+      background-color: #302F2F;
+    }
+  }
+}

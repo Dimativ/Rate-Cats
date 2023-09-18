@@ -61,3 +61,12 @@
     line-height: 3vw;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .nameText {
+    color: #FFFFFF;
+    &:hover {
+      color: #FFFFFF;
+    }
+  }
+}

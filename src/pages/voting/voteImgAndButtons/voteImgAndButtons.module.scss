@@ -142,3 +142,10 @@
     border-top-right-radius: 5.33333333333vw;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .buttons {
+    border-color: #282828;
+    background-color: #282828;
+  }
+}

@@ -42,3 +42,14 @@
     }
   }
 }
+
+
+@media (prefers-color-scheme: dark) {
+  .wrapper {
+    background-color: #302F2F;
+
+    h1 {
+      color: #FFFFFF;
+    }
+  }
+}

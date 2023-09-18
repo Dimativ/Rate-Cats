@@ -18,3 +18,9 @@
     border-radius: 5.33333333333vw;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .wrapper {
+    background-color: #302F2F;
+  }
+}
