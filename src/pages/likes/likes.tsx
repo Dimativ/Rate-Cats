@@ -5,6 +5,8 @@ import React, {useEffect} from "react";
 import {fetchLikesVotes} from "../../store/slices/likesSlice/likesSlice.ts";
 import {useAppDispatch, useAppSelector} from "../../store/store.ts";
 import {Status} from "../../store/slices/likesSlice/likesTypes.ts";
+// @ts-ignore
+import {Helmet} from "react-helmet";
 
 const Likes: React.FC = () => {
     const {likes, status} = useAppSelector((state) => state.likes)
@@ -16,6 +18,9 @@ const Likes: React.FC = () => {
 
     return (
         <div className={style.wrapper}>
+            <Helmet
+                title="Likes"
+            />
             <BackButtonCategory/>
             {status === Status.LOADING ? <Loader/> : <LikesGrid likes={likes}/>}
         </div>

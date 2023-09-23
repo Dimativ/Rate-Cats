@@ -8,6 +8,8 @@ import {
 import toast, {Toaster} from "react-hot-toast";
 import {useAppDispatch, useAppSelector} from "../../store/store.ts";
 import {Status} from "../../store/slices/favouriteSlice/favouriteTypes.ts";
+// @ts-ignore
+import {Helmet} from "react-helmet";
 
 const Favourite: React.FC = () => {
     const {favourite, status} = useAppSelector((state) => state.favourite)
@@ -39,6 +41,9 @@ const Favourite: React.FC = () => {
 
     return (
         <div className={style.wrapper}>
+            <Helmet
+                title="Favourite"
+            />
             <Toaster position='top-right'/>
             <BackButtonCategory/>
             {status === Status.LOADING ? <Loader/> :

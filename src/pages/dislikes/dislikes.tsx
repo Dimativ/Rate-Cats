@@ -4,6 +4,8 @@ import {BackButtonCategory, DislikesGrid, Loader} from "../../index.ts";
 import {fetchDislikesVotes} from "../../store/slices/dislikesSlice/dislikesSlice.ts";
 import {useAppDispatch, useAppSelector} from "../../store/store.ts";
 import {Status} from "../../store/slices/dislikesSlice/dislikesTypes.ts";
+// @ts-ignore
+import {Helmet} from "react-helmet";
 
 const Dislikes: React.FC = () => {
     const {dislikes, status} = useAppSelector((state) => state.dislikes)
@@ -15,6 +17,9 @@ const Dislikes: React.FC = () => {
 
     return (
         <div className={style.wrapper}>
+            <Helmet
+                title="Dislikes"
+            />
             <BackButtonCategory/>
             {status === Status.LOADING ? <Loader/> : <DislikesGrid dislikes={dislikes}/>}
         </div>
