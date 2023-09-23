@@ -82,11 +82,11 @@
   position: fixed;
 
   span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(2vw) rotate(45deg);
   }
 
   span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-2vw) rotate(-45deg);
   }
 
   span:nth-child(2) {
