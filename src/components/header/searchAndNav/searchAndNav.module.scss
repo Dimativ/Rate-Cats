@@ -34,7 +34,7 @@
 }
 
 .card {
- @extend %card;
+  @extend %card;
 }
 
 .selected {
@@ -43,6 +43,7 @@
   svg {
     fill: #FFFFFF;
   }
+
   @extend %card;
 }
 

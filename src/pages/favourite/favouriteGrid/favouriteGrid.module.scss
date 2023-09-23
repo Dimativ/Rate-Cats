@@ -32,6 +32,7 @@
 
   &:hover .overlay {
     background-color: RGBA(255, 134, 142, 0.6);
+
     img {
       opacity: 1;
     }
@@ -68,6 +69,7 @@
   .wrapper {
     margin: 5.33333333333vw;
     overflow: scroll;
+
     img {
       border-radius: 2.66666666667vw;
     }

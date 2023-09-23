@@ -1,13 +1,14 @@
 import style from "./likes.module.scss";
 import {BackButtonCategory} from "../../components/backButtonCategory/backButtonCategory.tsx";
 import {LikesGrid, Loader} from "../../index.ts";
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import {fetchLikesVotes} from "../../store/slices/likesSlice/likesSlice.ts";
+import {useAppDispatch, useAppSelector} from "../../store/store.ts";
+import {Status} from "../../store/slices/likesSlice/likesTypes.ts";
 
-const Likes = () => {
-    const {likes, status} = useSelector((state) => state.likes)
-    const dispatch = useDispatch()
+const Likes: React.FC = () => {
+    const {likes, status} = useAppSelector((state) => state.likes)
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         dispatch(fetchLikesVotes())
@@ -16,7 +17,7 @@ const Likes = () => {
     return (
         <div className={style.wrapper}>
             <BackButtonCategory/>
-            {status === 'loading' ? <Loader/> : <LikesGrid likes={likes}/>}
+            {status === Status.LOADING ? <Loader/> : <LikesGrid likes={likes}/>}
         </div>
     )
 }

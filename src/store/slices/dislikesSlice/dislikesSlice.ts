@@ -1,10 +1,12 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import axios from "axios";
 import {API_KEY} from "../../../api.ts";
+import {DislikesSliceState, Status, DislikeItem} from "./dislikesTypes.ts";
 
-const initialState = {
+
+const initialState: DislikesSliceState = {
     dislikes: [],
-    status: 'loading' // loading | success | error
+    status: Status.LOADING // loading | success | error
 }
 
 export const fetchDislikesVotes = createAsyncThunk(
@@ -15,28 +17,27 @@ export const fetchDislikesVotes = createAsyncThunk(
                 'x-api-key': API_KEY
             }
         })
-        return data.filter((dislikes) => dislikes.value === -1)
+        return data.filter((dislikes: DislikeItem) => dislikes.value === -1)
     }
 )
 
 export const dislikesSlice = createSlice({
     name: 'dislikes',
     initialState,
-    reducers: {
-    },
-    extraReducers: {
-        [fetchDislikesVotes.fulfilled]: (state, action) => {
+    reducers: {},
+    extraReducers: (builder) => {
+        builder.addCase(fetchDislikesVotes.fulfilled, (state, action) => {
             state.dislikes = action.payload
-            state.status = 'success'
-        },
-        [fetchDislikesVotes.pending]: (state) => {
+            state.status = Status.SUCCESS
+        });
+        builder.addCase(fetchDislikesVotes.pending, (state) => {
             state.dislikes = []
-            state.status = 'loading'
-        }
+            state.status = Status.LOADING
+        });
     }
 })
 
 // Action creators are generated for each case reducer function
-export const {} = dislikesSlice.actions
+
 
 export default dislikesSlice.reducer

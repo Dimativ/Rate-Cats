@@ -1,7 +1,8 @@
 import style from "./voteImgAndButtons.module.scss"
 import ContentLoader from "react-content-loader"
+import React from "react";
 
-export const Skeleton = (props) => (
+export const Skeleton: React.FC = (props) => (
     <ContentLoader
         className={style.skeleton}
         speed={2}
@@ -12,6 +13,6 @@ export const Skeleton = (props) => (
         foregroundColor="#ecebeb"
         {...props}
     >
-        <rect x="0" y="0" rx="20" ry="20" width="640" height="360" />
+        <rect x="0" y="0" rx="20" ry="20" width="640" height="360"/>
     </ContentLoader>
 )

@@ -1,6 +1,8 @@
 import style from "./gallery.module.scss"
 import {BackButtonCategory} from "../../components/backButtonCategory/backButtonCategory.tsx";
-const Gallery = () => {
+import React from "react";
+
+const Gallery: React.FC = () => {
     return (
         <div className={style.wrapper}>
             <BackButtonCategory/>

@@ -1,6 +1,7 @@
 //--------------------------------header
 export * from "./components/header/searchAndNav/searchAndNav.tsx"
 export * from "./components/header/mobileMenu/mobileMenu.tsx"
+
 //-------------------------------stickyNavigation Component
 export * from "./components/stickyNavigation/stickyNav.tsx"
 export * from "./components/stickyNavigation/navigation/navigation.tsx"

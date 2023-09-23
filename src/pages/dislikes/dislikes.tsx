@@ -1,12 +1,13 @@
 import style from "./dislikes.module.scss";
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import {BackButtonCategory, DislikesGrid, Loader} from "../../index.ts";
 import {fetchDislikesVotes} from "../../store/slices/dislikesSlice/dislikesSlice.ts";
+import {useAppDispatch, useAppSelector} from "../../store/store.ts";
+import {Status} from "../../store/slices/dislikesSlice/dislikesTypes.ts";
 
-const Dislikes = () => {
-    const {dislikes, status} = useSelector((state) => state.dislikes)
-    const dispatch = useDispatch()
+const Dislikes: React.FC = () => {
+    const {dislikes, status} = useAppSelector((state) => state.dislikes)
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         dispatch(fetchDislikesVotes())
@@ -15,7 +16,7 @@ const Dislikes = () => {
     return (
         <div className={style.wrapper}>
             <BackButtonCategory/>
-            {status === 'loading' ? <Loader/> : <DislikesGrid dislikes={dislikes}/>}
+            {status === Status.LOADING ? <Loader/> : <DislikesGrid dislikes={dislikes}/>}
         </div>
     )
 }

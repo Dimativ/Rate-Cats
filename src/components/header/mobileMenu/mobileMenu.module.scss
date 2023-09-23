@@ -80,6 +80,7 @@
 .activeBtn {
   @extend %toggleBtn;
   position: fixed;
+
   span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
@@ -118,9 +119,10 @@
   %toggleBtn {
     background-color: #302F2F;
   }
-  .navigation{
+  .navigation {
     background-color: #1D1D1D;
-    a{
+
+    a {
       background-color: #302F2F;
     }
   }

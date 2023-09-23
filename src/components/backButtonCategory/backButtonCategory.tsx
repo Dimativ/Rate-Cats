@@ -1,7 +1,9 @@
 import style from "./backButtonCategory.module.scss"
 import {useLocation, useNavigate} from "react-router-dom";
 import backArrow from "../../pics/backButtonCategory/backArrow.png"
-export const BackButtonCategory = () => {
+import React from "react";
+
+export const BackButtonCategory: React.FC = () => {
     const navigate = useNavigate();
     const location = useLocation()
     return (

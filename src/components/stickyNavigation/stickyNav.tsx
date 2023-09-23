@@ -2,8 +2,9 @@ import style from "./stickyNav.module.scss"
 import {Navigation} from "../../index.ts";
 import {useMediaQuery} from "react-responsive";
 import {useLocation} from "react-router-dom";
+import React from "react";
 
-const Greetings = () => {
+const Greetings: React.FC = () => {
     return (
         <>
             <h1>Hi!👋</h1>
@@ -11,9 +12,9 @@ const Greetings = () => {
         </>
     )
 }
-export const StickyNav = () => {
-    const isNormalScreen = useMediaQuery({ query: '(min-width: 813px)' })
-    const isMobile = useMediaQuery({ query: '(max-width: 812px)' })
+export const StickyNav: React.FC = () => {
+    const isNormalScreen = useMediaQuery({query: '(min-width: 813px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 812px)'})
     const location = useLocation()
     return (
         <div className={style.wrapper}>

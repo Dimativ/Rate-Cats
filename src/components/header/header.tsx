@@ -3,22 +3,23 @@ import {Link, useLocation} from "react-router-dom";
 import logo from "../../pics/header/logo.png"
 import {MobileMenu, SearchAndNav} from "../../index.ts";
 import {useMediaQuery} from "react-responsive";
+import React from "react";
 
-const LogoAndTitle = () => {
+const LogoAndTitle: React.FC = () => {
     return (
         <>
-        <Link to="/" className={style.logo}>
-            <img src={logo}></img>
-        </Link>
-        <Link to="/" className={style.nameText}>
-            RatePets
-        </Link>
-    </>
+            <Link to="/" className={style.logo}>
+                <img src={logo}></img>
+            </Link>
+            <Link to="/" className={style.nameText}>
+                RatePets
+            </Link>
+        </>
     )
 }
-const Header = () => {
-    const isNormalScreen = useMediaQuery({ query: '(min-width: 813px)' })
-    const isMobile = useMediaQuery({ query: '(max-width: 812px)' })
+const Header: React.FC = () => {
+    const isNormalScreen = useMediaQuery({query: '(min-width: 813px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 812px)'})
     const location = useLocation()
 
     return (

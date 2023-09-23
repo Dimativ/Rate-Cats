@@ -1,6 +1,8 @@
 import style from "./breeds.module.scss"
 import {BackButtonCategory} from "../../index.ts";
-const Breeds = () => {
+import React from "react";
+
+const Breeds: React.FC = () => {
     return (
         <div className={style.wrapper}>
             <BackButtonCategory/>

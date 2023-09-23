@@ -1,22 +1,23 @@
 import style from "./favourite.module.scss"
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import {Loader, BackButtonCategory, FavouriteGrid} from "../../index.ts";
 import {
     deleteFavouriteVote,
     fetchFavouriteVotes,
 } from "../../store/slices/favouriteSlice/favouriteSlice.ts";
 import toast, {Toaster} from "react-hot-toast";
+import {useAppDispatch, useAppSelector} from "../../store/store.ts";
+import {Status} from "../../store/slices/favouriteSlice/favouriteTypes.ts";
 
-const Favourite = () => {
-    const {favourite, status} = useSelector((state) => state.favourite)
-    const dispatch = useDispatch()
+const Favourite: React.FC = () => {
+    const {favourite, status} = useAppSelector((state) => state.favourite)
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         dispatch(fetchFavouriteVotes())
     }, [])
 
-    const onClickDeleteFavourite = (id) => {
+    const onClickDeleteFavourite = (id: number) => {
         toast.promise(
             dispatch(deleteFavouriteVote(id)),
             {
@@ -40,7 +41,7 @@ const Favourite = () => {
         <div className={style.wrapper}>
             <Toaster position='top-right'/>
             <BackButtonCategory/>
-            {status === 'loading' ? <Loader/> :
+            {status === Status.LOADING ? <Loader/> :
                 <FavouriteGrid onClickDeleteFavourite={onClickDeleteFavourite} favourite={favourite}/>}
         </div>
     )

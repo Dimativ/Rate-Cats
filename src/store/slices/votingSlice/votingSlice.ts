@@ -1,11 +1,11 @@
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
+import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
 import axios from "axios";
 import {API_KEY} from "../../../api.ts";
+import {Status, VotingItem, VotingSliceState} from "./votingTypes.ts";
 
-
-const initialState = {
+const initialState: VotingSliceState = {
     items: [],
-    status: 'loading' // loading | success | error
+    status: Status.LOADING // loading | success | error
 }
 
 
@@ -31,7 +31,7 @@ export const fetchImages = createAsyncThunk(
 
 export const postVoteDown = createAsyncThunk(
     'voting/postVoteDown',
-    async (id) => {
+    async (id: string) => {
         const postData = {
             image_id: id,
             value: -1, // Upvote value
@@ -42,7 +42,7 @@ export const postVoteDown = createAsyncThunk(
 export const postVoteUp = createAsyncThunk(
     'voting/postVoteUp',
 
-    async (id) => {
+    async (id: string) => {
         const postData = {
             image_id: id,
             value: 1, // Upvote value
@@ -55,19 +55,20 @@ export const votingSlice = createSlice({
     name: 'voting',
     initialState,
     reducers: {
-        setItems(state, action) {
+        setItems(state, action: PayloadAction<VotingItem[]>) {
             state.items = action.payload
         },
     },
-    extraReducers: {
-        [fetchImages.fulfilled]: (state, action) => {
+    extraReducers: (builder) => {
+        builder.addCase(fetchImages.fulfilled, (state, action) => {
             state.items = action.payload
-            state.status = 'success'
-        },
-        [fetchImages.pending]: (state) => {
+            state.status = Status.SUCCESS
+        });
+        builder.addCase(fetchImages.pending, (state) => {
             state.items = []
-            state.status = 'loading'
-        },
+            state.status = Status.LOADING
+        });
+
     }
 })
 

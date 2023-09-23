@@ -1,10 +1,11 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import axios from "axios";
 import {API_KEY} from "../../../api.ts";
+import {FavouriteItem, FavouriteSliceState, Status} from "./favouriteTypes.ts";
 
-const initialState = {
+const initialState: FavouriteSliceState = {
     favourite: [],
-    status: 'loading' // loading | success | error
+    status: Status.LOADING // loading | success | error
 }
 
 export const fetchFavouriteVotes = createAsyncThunk(
@@ -15,13 +16,13 @@ export const fetchFavouriteVotes = createAsyncThunk(
                 'x-api-key': API_KEY
             }
         })
-        return data
+        return data as FavouriteItem[]
     }
 )
 
 export const deleteFavouriteVote = createAsyncThunk(
     'favourite/deleteFavouriteVote',
-    async (id) => {
+    async (id: number) => {
         await axios.delete(`https://api.thecatapi.com/v1/favourites/${id}`, {
             headers: {
                 'x-api-key': API_KEY
@@ -35,24 +36,23 @@ export const deleteFavouriteVote = createAsyncThunk(
 export const favouriteSlice = createSlice({
     name: 'favourite',
     initialState,
-    reducers: {
-    },
-    extraReducers: {
-        [fetchFavouriteVotes.fulfilled]: (state, action) => {
+    reducers: {},
+    extraReducers: (builder) => {
+        builder.addCase(fetchFavouriteVotes.fulfilled, (state, action) => {
             state.favourite = action.payload
-            state.status = 'success'
-        },
-        [fetchFavouriteVotes.pending]: (state) => {
+            state.status = Status.SUCCESS
+        });
+        builder.addCase(fetchFavouriteVotes.pending, (state) => {
             state.favourite = []
-            state.status = 'loading'
-        },
-        [deleteFavouriteVote.fulfilled]: (state, action) => {
+            state.status = Status.LOADING
+        });
+        builder.addCase(deleteFavouriteVote.fulfilled, (state, action) => {
             state.favourite = state.favourite.filter((obj) => obj.id !== action.payload)
-        },
+        });
     }
 })
 
 // Action creators are generated for each case reducer function
-export const {} = favouriteSlice.actions
+
 
 export default favouriteSlice.reducer

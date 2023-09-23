@@ -24,6 +24,7 @@
     text-transform: uppercase;
     @extend %text
   }
+
   p {
     font-weight: 400;
     @extend %text

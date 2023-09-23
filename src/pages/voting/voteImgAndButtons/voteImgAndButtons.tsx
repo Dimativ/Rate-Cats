@@ -1,14 +1,20 @@
 import style from "./voteImgAndButtons.module.scss"
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import axios from "axios";
 import {API_KEY} from "../../../api.ts";
 import {Skeleton} from "./skeleton.tsx";
 import toast, {Toaster} from 'react-hot-toast';
-import {useDispatch} from "react-redux";
 import {fetchImages, postVoteDown, postVoteUp} from "../../../store/slices/votingSlice/votingSlice.ts";
+import {useAppDispatch} from "../../../store/store.ts";
+import {Status, VotingItem} from "../../../store/slices/votingSlice/votingTypes.ts";
 
-export const VoteImgAndButtons = ({items, status}) => {
-    const dispatch = useDispatch()
+type VoteImgAndButtonsProps = {
+    items: VotingItem[];
+    status: Status;
+}
+
+export const VoteImgAndButtons: React.FC<VoteImgAndButtonsProps> = ({items, status}) => {
+    const dispatch = useAppDispatch()
     const favouriteEndpoint = `https://api.thecatapi.com/v1/favourites`
 
     const config = {
@@ -18,7 +24,7 @@ export const VoteImgAndButtons = ({items, status}) => {
         },
     };
 
-    const onClickLike = (id) => {
+    const onClickLike = (id: string) => {
         dispatch(postVoteUp(id))
         toast.promise(
             dispatch(fetchImages()),
@@ -40,7 +46,7 @@ export const VoteImgAndButtons = ({items, status}) => {
     }
 
 
-    const onClickDislike = (id) => {
+    const onClickDislike = (id: string) => {
         dispatch(postVoteDown(id))
         toast.promise(
             dispatch(fetchImages()),
@@ -61,7 +67,7 @@ export const VoteImgAndButtons = ({items, status}) => {
         );
     }
 
-    const onClickFavourite = async (id) => {
+    const onClickFavourite = async (id: string) => {
         const postData = {
             image_id: id,
         };
@@ -94,10 +100,10 @@ export const VoteImgAndButtons = ({items, status}) => {
     return (
         <section className={style.wrapper}>
             <Toaster position='top-right'/>
-            {status === 'loading' ? <Skeleton/> : items.map((obj, index) => (
+            {status === Status.LOADING ? <Skeleton/> : items.map((obj) => (
                 <img src={obj.url} key={obj.id}></img>
             ))}
-            {items.map((obj, index) => (
+            {items.map((obj, index: number) => (
                 <section key={index} className={style.buttons}>
                     <button onClick={() => onClickLike(obj.id)} className={style.likes}>
                         <svg viewBox="0 0 30 30" fill="none">
