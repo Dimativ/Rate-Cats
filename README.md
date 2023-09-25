@@ -23,11 +23,11 @@ $ yarn dev or yarn host or yarn build & yarn preview
 If you want to start project also for other devices, opt yarn host and don't forget to open the necessary ports.
 
 ### Application design
-![design](https://github.com/Dimativ/Rate-Cats/assets/88792228/c65f9a02-d0cb-421c-9b67-52887b724698)
+![design](https://github.com/Dimativ/Rate-Cats/assets/88792228/5585b940-b8f8-446a-b8f1-0d20f071f70c)
 ### Mobile view
 ### Screen resizing behavior
-![responsive](https://github.com/Dimativ/Rate-Cats/assets/88792228/8aee4e76-037f-4e42-a30a-8e5d632076ae)
+![responsive](https://github.com/Dimativ/Rate-Cats/assets/88792228/8ec6f3c9-8cde-4a2a-b61f-58cf08c42187)
 ### Dark&Light mode
-![darkMode](https://github.com/Dimativ/Rate-Cats/assets/88792228/00fe7b77-84b8-4b06-aa06-7315ac1fd367)
+![darkMode](https://github.com/Dimativ/Rate-Cats/assets/88792228/268bca83-972e-4cb0-922b-cc830b7983c8)
 ### Notifications
-![notifications](https://github.com/Dimativ/Rate-Cats/assets/88792228/f40663cd-3b58-490e-bce9-a5df16a17df7)
+![notifications](https://github.com/Dimativ/Rate-Cats/assets/88792228/8f9103b3-21ed-4dff-95bd-a04e21d5cd00)
