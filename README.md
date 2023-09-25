@@ -7,7 +7,8 @@ This repository contains an application that allow you to rate cats pictures, an
 
 ## Navigation through document
 * [Setup](#Setup)
-* [Application design and screen resizing behavior](#Application-design-and-screen-resizing-behavior)
+* [Application design](#Application-design)
+* [Screen resizing behavior](#Screen-resizing-behavior)
 * [Mobile view](#Mobile-view)
 * [Dark&Light mode](#Dark&Light-mode)
 * [Notifications](#Notifications)
@@ -21,11 +22,12 @@ $ yarn dev or yarn host or yarn build & yarn preview
 ```
 If you want to start project also for other devices, opt yarn host and don't forget to open the necessary ports.
 
-### Application design and screen resizing behavior
-![Design](https://github.com/Dimativ/React-Pizza/assets/88792228/0cccaa60-fd13-44d2-81f3-997312e3c5e3)
+### Application design
+![design](https://github.com/Dimativ/Rate-Cats/assets/88792228/c65f9a02-d0cb-421c-9b67-52887b724698)
 ### Mobile view
-![cart](https://github.com/Dimativ/React-Pizza/assets/88792228/15313cc6-69fb-49af-8d95-8fb7a5a34a99)
+### Screen resizing behavior
+![responsive](https://github.com/Dimativ/Rate-Cats/assets/88792228/8aee4e76-037f-4e42-a30a-8e5d632076ae)
 ### Dark&Light mode
-![debounce](https://github.com/Dimativ/React-Pizza/assets/88792228/224d764f-9a97-41d1-a5d2-adb8f5500e3d)
+![darkMode](https://github.com/Dimativ/Rate-Cats/assets/88792228/00fe7b77-84b8-4b06-aa06-7315ac1fd367)
 ### Notifications
-![ezgif com-video-to-gif](https://github.com/Dimativ/React-Pizza/assets/88792228/5d2dfc5c-3d9f-498d-b34f-0ca768b42321)
+![notifications](https://github.com/Dimativ/Rate-Cats/assets/88792228/f40663cd-3b58-490e-bce9-a5df16a17df7)
