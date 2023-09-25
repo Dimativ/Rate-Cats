@@ -1,7 +1,7 @@
 # Rate-Cats
 Developed by Dmytro Lytvynenko (с) 2023
 
-[Link to website]([https://react-pizza-nu-dun.vercel.app/](https://rate-cats.vercel.app/))
+[Link to website](https://rate-cats.vercel.app/)
 
 This repository contains an application that allow you to rate cats pictures, and add it to your likes, favourites and dislikes. 
 
