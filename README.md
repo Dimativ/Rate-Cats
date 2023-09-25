@@ -10,7 +10,7 @@ This repository contains an application that allow you to rate cats pictures, an
 * [Application design](#Application-design)
 * [Screen resizing behavior](#Screen-resizing-behavior)
 * [Mobile view](#Mobile-view)
-* [Dark&Light mode](#Dark&Light-mode)
+* [Dark&Light mode](#darklight-mode)
 * [Notifications](#Notifications)
 
 ### Setup
@@ -24,10 +24,10 @@ If you want to start project also for other devices, opt yarn host and don't for
 
 ### Application design
 ![design](https://github.com/Dimativ/Rate-Cats/assets/88792228/5585b940-b8f8-446a-b8f1-0d20f071f70c)
-### Mobile view
-![mobile](https://github.com/Dimativ/Rate-Cats/assets/88792228/5b50e5f7-5885-471e-a67c-62bdba8f0c15)
 ### Screen resizing behavior
 ![responsive](https://github.com/Dimativ/Rate-Cats/assets/88792228/8ec6f3c9-8cde-4a2a-b61f-58cf08c42187)
+### Mobile view
+![mobile](https://github.com/Dimativ/Rate-Cats/assets/88792228/5b50e5f7-5885-471e-a67c-62bdba8f0c15)
 ### Dark&Light mode
 ![darkMode](https://github.com/Dimativ/Rate-Cats/assets/88792228/268bca83-972e-4cb0-922b-cc830b7983c8)
 ### Notifications
